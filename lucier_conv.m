@@ -1,7 +1,7 @@
 pkg load signal
 set(0, 'DefaultFigureVisible', 'off');
 
-% LOAD SIGNAL
+% LOAD SIGNAL, you can replace it with anything:
 [signal, sampleRate] = audioread('myVoice.wav');
 signal = mean(signal, 2);
 
@@ -51,11 +51,12 @@ end
 
 % SAVE AUDIO TO PROJECT FOLDER
 
-base = 'C:/Users/Gianni/Documents/LucierProject/';
+% FILE PATH FROM ROOT DIRECTORY GOES HERE:
+base = '';
 
 audiowrite([base 'lucierVerb.wav'],       lucierVerb / max(abs(lucierVerb)), sampleRate);
 audiowrite([base 'lucierFeedback1.wav'],  step2 / max(abs(step2)), sampleRate);
 audiowrite([base 'lucierFeedback10.wav'], out  / max(abs(out)), sampleRate);
 
-disp("DONE — WAV files saved to LucierProject folder.");
+disp("DONE — WAV files saved to [BLANK] folder.");
 
